@@ -27,7 +27,7 @@ const PasteCard = React.memo(({ paste, handleDelete }) => {
           key={paste._id}
           className="bg-slate-200 relative p-4 rounded-2xl shadow-md w-full"
         >
-          <div className="buttons absolute right-0 sm:flex flex-wrap sm:gap-5 space-x-1 mask-l-from-green-800  mr-2">
+          <div className="buttons justify-end  sm:left-0 right-0 sm:flex flex-wrap sm:gap-5 space-x-1 mask-l-from-green-800  mr-2">
             <button className="px-2 py-1 bg-white rounded-xl">
               <Link to={`/?pasteId=${paste?._id}`}>
               <EditIcon/>

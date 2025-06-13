@@ -45,8 +45,9 @@ const paste = {
   title: title,
   content: value,
   _id: pasteId || Date.now().toString(36) + Math.random().toString(36).substring(2),
-  createdAt: new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
+  createdAt: new Date().toLocaleDateString('en-US')
 };
+
 console.log(paste.createdAt); // Example output: "June 13 2025"
 
     //providing pasteData to the store
@@ -86,7 +87,7 @@ console.log(paste.createdAt); // Example output: "June 13 2025"
             className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700"
             onClick={createPaste}
           >
-            {pasteId ? "Update Paste" : "Create My Paste"}
+            {pasteId ? "Update Paste" : "Create Paste"}
           </button>
 
         {pasteId &&  <button
