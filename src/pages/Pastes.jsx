@@ -3,6 +3,8 @@ import { useState , useCallback } from "react";
 import { removeFromPastes } from "../redux/pasteSlice";
 import PasteCard from "../components/PasteCard";
 
+import pasteImg from "../assets/paste.svg"; // Assuming you have a paste image in your assets
+
 const Pastes = () => {
   // Get pastes from Redux store with fallback
   const pastes = useSelector((state) => state.pastes.pastes || []);
@@ -25,6 +27,9 @@ const Pastes = () => {
 
   return (
     <>
+       <div className="flex mx-auto justify-center items-center mt-5 mb-5">
+        <img width={300} src={pasteImg} alt="" />
+       </div>
       <section className="flex flex-col items-center gap-6 p-4">
         <div className="inputField mb-4">
           <input
