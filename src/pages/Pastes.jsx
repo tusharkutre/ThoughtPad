@@ -36,7 +36,7 @@ const Pastes = () => {
         <img width={300} src={pasteImg} alt="" />
       </div>
       <div className="w-full p-4 rounded-2xl bg-blue-600 flex flex-col items-start mb-4">
-        <ThoughPadUI heading="Find your pastes here" para="Edit and share your fav pastes with friends"/>
+        <ThoughPadUI heading="Find your pastes here" para="Edit and share your fav pastes with friends ❤️"/>
       </div>
     </section>
       <section className="flex flex-col items-center gap-6 p-4">
