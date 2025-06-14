@@ -81,11 +81,11 @@ const Home = () => {
           <div className="flex mx-auto mb-4">
             <img width={300} src={home} alt="" />
           </div>
-          <div className="flex w-full gap-10">
-          <div className="w-[50%] p-4 rounded-2xl bg-purple-600 flex flex-col items-start mb-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 w-full sm:gap-5">
+          <div className="md:w-[100%] p-4 rounded-2xl bg-purple-600 flex flex-col items-start mb-4">
             <ThoughPadUI/>
           </div>
-          <div className="w-[50%] p-4 rounded-2xl bg-teal-600 flex flex-col items-start mb-4">
+          <div className="md:w-[100%] p-4 rounded-2xl bg-teal-600 flex flex-col items-start mb-4">
             <SmallPadUI/>
           </div>
           </div>
