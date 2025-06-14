@@ -6,6 +6,7 @@ import { addToPastes, updateToPastes } from "../redux/pasteSlice";
 import { Copy, PlusCircle } from "lucide-react";
 
 import home from "../assets/home.svg"; // Assuming you have a home icon in your assets
+import ThoughPadUI from "../components/ThoughPadUI";
 
 const Home = () => {
   const dispatch = useDispatch(); //extracting out the reducers(functions) from the store.js
@@ -78,6 +79,9 @@ const Home = () => {
         <div className="flex flex-col gap-y-5 items-start">
           <div className="flex mx-auto mb-4">
             <img width={300} src={home} alt="" />
+          </div>
+          <div className="w-full p-4 rounded-2xl bg-purple-600 flex flex-col items-start mb-4">
+            <ThoughPadUI/>
           </div>
           <div className="w-full flex flex-row gap-x-4 justify-between items-center">
             <input

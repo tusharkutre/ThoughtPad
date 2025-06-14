@@ -6,6 +6,7 @@ import { Link } from "react-router";
 const PasteCard = React.memo(({ paste, handleDelete }) => {
   console.log("pasteCard component re-rendering...");
 
+  //handle copy function
   const handleCopy = (content) => {
     navigator.clipboard
       .writeText(content)

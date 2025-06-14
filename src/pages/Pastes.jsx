@@ -1,7 +1,8 @@
 import { useSelector, useDispatch } from "react-redux";
-import { useState , useCallback } from "react";
+import { useState, useCallback } from "react";
 import { removeFromPastes } from "../redux/pasteSlice";
 import PasteCard from "../components/PasteCard";
+import ThoughPadUI from "../components/ThoughPadUI";
 
 import pasteImg from "../assets/paste.svg"; // Assuming you have a paste image in your assets
 
@@ -21,15 +22,23 @@ const Pastes = () => {
       )
     : [];
 
- const handleDelete = useCallback((id) => {
-    dispatch(removeFromPastes(id));
-  }, [dispatch]);
+  const handleDelete = useCallback(
+    (id) => {
+      dispatch(removeFromPastes(id));
+    },
+    [dispatch]
+  );
 
   return (
     <>
-       <div className="flex mx-auto justify-center items-center mt-5 mb-5">
+    <section className="mx-auto max-w-4xl p-4">
+      <div className="flex justify-center items-center mt-5 mb-5">
         <img width={300} src={pasteImg} alt="" />
-       </div>
+      </div>
+      <div className="w-full p-4 rounded-2xl bg-blue-600 flex flex-col items-start mb-4">
+        <ThoughPadUI heading="Find your pastes here" para="Edit and share your fav pastes with friends"/>
+      </div>
+    </section>
       <section className="flex flex-col items-center gap-6 p-4">
         <div className="inputField mb-4">
           <input
@@ -45,11 +54,11 @@ const Pastes = () => {
           {/* conditional rendering */}
           {filteredData.length > 0 ? (
             filteredData.map((paste) => (
-             <PasteCard
-               key={paste._id}
-               paste={paste}
-               handleDelete={handleDelete}
-             />
+              <PasteCard
+                key={paste._id}
+                paste={paste}
+                handleDelete={handleDelete}
+              />
             ))
           ) : pastes.length > 0 ? (
             <div className="text-center p-8">
