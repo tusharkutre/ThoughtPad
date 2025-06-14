@@ -50,7 +50,7 @@ const Pastes = () => {
           />
         </div>
 
-        <div className="pasteData flex flex-col gap-5 w-full max-w-4xl">
+        <div className="pasteData grid grid-cols-1 md:grid-cols-2 gap-5 w-full max-w-4xl">
           {/* conditional rendering */}
           {filteredData.length > 0 ? (
             filteredData.map((paste) => (

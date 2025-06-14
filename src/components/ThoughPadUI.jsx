@@ -2,7 +2,7 @@ const ThoughPadUI = ({ heading, para }) => {
   return (
     <div>
       <h1 className="text-white text-2xl font-bold mb-2">
-        {heading || "Welcome to ThoughtPad"}
+        {heading || "Welcome to ThoughtPad 🗒️"}
       </h1>
       <p className="text-white text-lg">
         {para ||
