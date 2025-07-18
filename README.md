@@ -1,4 +1,4 @@
-# ThoughtPad : a notes/codes saver app
+# NotePad : a notes/codes saver app
 
 # Tech stack :
 - React.js
