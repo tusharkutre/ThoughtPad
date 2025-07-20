@@ -15,7 +15,7 @@ const Navbar = ({isDarkMode,handleDarkMode}) => {
           <h2 className={`font-semibold hidden sm:block absolute text-center text-2xl ${isDarkMode  ? "text-white" : " text-black"}`}>
             NotePad🗒️
           </h2>
-          <div className="flex drop-shadow-2xl drop-shadow-purple-400 relative md:items-center md:justify-center justify-between bg-slate-200 w-fit rounded-2xl sm:mx-auto  m-5 flex-row gap-2 p-1 bg-light">
+          <div className="flex drop-shadow-2xl  drop-shadow-purple-400 relative md:items-center md:justify-center justify-between bg-slate-200 w-fit rounded-2xl sm:mx-auto  m-5 flex-row gap-2 p-1 bg-light">
             {tabs.map((tab, index) => (
               <NavLink
                 key={index}

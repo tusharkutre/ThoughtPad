@@ -22,8 +22,7 @@ const Pastes = () => {
       )
     : [];
 
-  const handleDelete = useCallback(
-    (id) => {
+  const handleDelete = useCallback((id) => {
       dispatch(removeFromPastes(id));
     },
     [dispatch]
@@ -61,7 +60,7 @@ const Pastes = () => {
               />
             ))
           ) : pastes.length > 0 ? (
-            <div className="text-center p-8">
+            <div className="text-center p-8 bg-slate-100 rounded-lg shadow-md">
               <p className="text-gray-600">
                 No pastes match your search "{searchTerm}"
               </p>
@@ -70,7 +69,7 @@ const Pastes = () => {
               </p>
             </div>
           ) : (
-            <div className="text-center p-8">
+            <div className="text-center flex justify-center p-8 bg-slate-100 rounded-lg shadow-md">
               <p className="text-gray-600">No pastes found</p>
               <p className="text-sm text-gray-500 mt-2">
                 Create your first paste to get started

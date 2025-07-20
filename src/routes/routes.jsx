@@ -1,7 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
-import Home from "../pages/Home";
-import Pastes from "../pages/Pastes";
-import ViewPaste from "../pages/ViewPaste";
+import React from "react";
+const Home = React.lazy(() => import("../pages/Home"));
+const Pastes = React.lazy(() => import("../pages/Pastes"));
+const ViewPaste = React.lazy(() => import("../pages/ViewPaste"));
 import Layout from "../pages/Layout";
 
 // basic routing

@@ -13,6 +13,7 @@
 - A paste can be copy to clipboard
 
 # functionalities 
+- added suspense fallback loader
 - added redux setup
 - added routing setup
 - shows real date and time of a single note

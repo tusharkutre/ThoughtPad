@@ -21,6 +21,30 @@ const PasteCard = React.memo(({ paste, handleDelete }) => {
       });
   };
 
+    // logic to formatDate
+  const formatDate = (date) => {
+    const days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+    const months = [
+      "JAN",
+      "FEB",
+      "MAR",
+      "APR",
+      "MAY",
+      "JUN",
+      "JUL",
+      "AUG",
+      "SEP",
+      "OCT",
+      "NOV",
+      "DEC",
+    ];
+    const day = days[date.getDay()];
+    const month = months[date.getMonth()];
+    const dayNum = String(date.getDate()).padStart(2, "0");
+    const year = date.getFullYear();
+    return `${day} ${month} ${dayNum}, ${year}`;
+  };
+
   return (
     <>
       <section>
@@ -59,13 +83,13 @@ const PasteCard = React.memo(({ paste, handleDelete }) => {
           <h1 className="text-xl font-semibold mb-2">{paste.title}</h1>
           <p className="text-gray-700 mb-3">{paste.content}</p>
           {paste.createdAt && (
-            <p className="text-sm text-gray-500">
-              Created at: {new Date(paste.createdAt).toLocaleString()}
+            <p className="text-sm bg-white p-2 rounded-xl mb-2 w-fit text-gray-500">
+              Created at: {formatDate(new Date(paste.createdAt))}
             </p>
           )}
           {paste.updatedAt && (
-            <p className="text-sm text-gray-500">
-              Updated at: {new Date(paste.updatedAt).toLocaleString()}
+            <p className="text-sm text-gray-500 bg-white p-2 rounded-xl w-fit">
+              Updated at: {formatDate(new Date(paste.updatedAt))}
             </p>
           )}
         </div>
