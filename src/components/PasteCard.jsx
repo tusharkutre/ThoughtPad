@@ -21,7 +21,7 @@ const PasteCard = React.memo(({ paste, handleDelete }) => {
       });
   };
 
-    // logic to formatDate
+  // logic to formatDate
   const formatDate = (date) => {
     const days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
     const months = [
@@ -42,7 +42,7 @@ const PasteCard = React.memo(({ paste, handleDelete }) => {
     const month = months[date.getMonth()];
     const dayNum = String(date.getDate()).padStart(2, "0");
     const year = date.getFullYear();
-    return `${day} ${month} ${dayNum}, ${year}`;
+    return `${day} ${month} ${dayNum}, ${year}`.toLowerCase();
   };
 
   return (

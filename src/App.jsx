@@ -22,9 +22,11 @@ const LoadingFallback = (
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const handleDarkMode = () => setIsDarkMode((prev) => !prev);
   const [showLoader, setShowLoader] = useState(true);
-
+  
+  // function to toggle dark mode
+  const handleDarkMode = () => setIsDarkMode((prev) => !prev);
+  
   useEffect(() => {
     const timer = setTimeout(() => setShowLoader(false), 2000);
     return () => clearTimeout(timer);

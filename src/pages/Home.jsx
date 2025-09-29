@@ -52,7 +52,7 @@ const Home = () => {
         pasteId ||
         Date.now().toString(36) + Math.random().toString(36).substring(2),
       createdAt: new Date().toLocaleDateString("en-US"),
-      updatedAt: new Date().toLocaleDateString("en-US"),
+      updatedAt: new Date().toLocaleDateString("en-US"),  
     };
 
     console.log(paste.createdAt);
