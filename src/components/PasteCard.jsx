@@ -1,9 +1,14 @@
+import React, { useContext } from "react";
 import { Copy, Delete, EditIcon, Eye, Share, Trash2, ViewIcon } from "lucide-react";
-import React from "react";
 import toast from "react-hot-toast";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
+import PasteContext from "../context/PasteContext";
 
 const PasteCard = React.memo(({ paste, handleDelete }) => {
+  // use shared modal state from context (provided by Pastes.jsx)
+  const context = useContext(PasteContext);
+  const setIsShareModalOpen = context?.setIsShareModalOpen;
+
   console.log("pasteCard component re-rendering...");
 
   //handle copy function
@@ -45,6 +50,7 @@ const PasteCard = React.memo(({ paste, handleDelete }) => {
     return `${day} ${month} ${dayNum}, ${year}`.toLowerCase();
   };
 
+  // simple open/close modal logic — this component will toggle the shared Drawer via context
   return (
     <>
       <section>
@@ -76,10 +82,18 @@ const PasteCard = React.memo(({ paste, handleDelete }) => {
               <Copy/>
             </button>
             {/* pending feature */}
-            <button className="px-2 cursor-pointer py-1 bg-white rounded-xl">
-              <Share/>
+
+
+
+            <button
+              onClick={() => setIsShareModalOpen && setIsShareModalOpen((p) => !p)}
+              className="px-2 cursor-pointer py-1 bg-white rounded-xl"
+            >
+              <Share />
             </button>
           </div>
+
+                        
           <h1 className="text-xl font-semibold mb-2">{paste.title}</h1>
           <p className="text-gray-700 mb-3">{paste.content}</p>
           {paste.createdAt && (
@@ -93,6 +107,9 @@ const PasteCard = React.memo(({ paste, handleDelete }) => {
             </p>
           )}
         </div>
+
+        {/* Drawer is provided at page level (Pastes.jsx) — PasteCard only toggles it via context */}
+
       </section>
     </>
   );
