@@ -9,7 +9,7 @@ import PasteContext from "../context/PasteContext";
 import pasteImg from "../assets/paste.svg"; // Assuming you have a paste image in your assets
 
 // consumer component(child component)
-const Pastes = () => {
+const Pastes = ({isDarkMode}) => {
   // local state to control the shared Drawer/modal
   const [isShareModalOpen, setIsShareModalOpen] = useState(false);
 
@@ -54,7 +54,7 @@ const Pastes = () => {
             <div className="inputField mb-4">
               <input
                 type="text"
-                className="p-2 border border-gray-300 rounded-xl w-80"
+                className={`p-2 border border-gray-300 text-black rounded-xl w-80 ${isDarkMode ? 'text-blue-100' : ' text-black'}` }
                 placeholder="Search pastes..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}

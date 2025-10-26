@@ -8,6 +8,7 @@ const Drawer = () => {
   const setIsOpen = ctx?.setIsShareModalOpen;
   const [isAnimating, setIsAnimating] = useState(false);
   const [shouldRender, setShouldRender] = useState(false);
+  const [icons , setIcons] = useState([])
 
   useEffect(() => {
     if (isOpen) {
@@ -40,12 +41,18 @@ const Drawer = () => {
             className={`bg-white dark:bg-gray-800 rounded-t-2xl p-4 shadow-lg transition-transform duration-300 ease-out transform ${
               isAnimating ? 'translate-y-0' : 'translate-y-full'
             }`}
-          >
+          >{icons.map((data,idx)=> {
+            <ul key={idx}>
+              <li>{data.whatsapp}</li>
+              <li>{data.instagram}</li>
+              <li>{data.x}</li>
+            </ul>
+          })}
             <div className="flex items-center justify-between mb-3">
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Share paste</h3>
               <button 
                 onClick={() => setIsOpen(false)} 
-                className="text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 px-2 py-1 rounded transition-colors duration-200"
+                className="text-gray-500 cursor-pointer hover:text-gray-700 dark:hover:text-gray-300 px-2 py-1 rounded transition-colors duration-200"
               >
                 Close
               </button>
