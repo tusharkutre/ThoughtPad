@@ -1,4 +1,3 @@
-
 import React, { useContext, useState, useEffect } from 'react';
 import PasteContext from '../context/PasteContext';
 
