@@ -82,7 +82,6 @@ const PasteCard = React.memo(({ paste, handleDelete }) => {
               <Copy/>
             </button>
             {/* pending feature */}
-
             <button
               onClick={() => setIsShareModalOpen && setIsShareModalOpen((p) => !p)}
               className="px-2 cursor-pointer py-1 bg-white rounded-xl"

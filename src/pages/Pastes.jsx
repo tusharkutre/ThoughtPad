@@ -62,7 +62,7 @@ const Pastes = ({isDarkMode}) => {
             </div>
 
             <div className="self-start">
-              <h1 className="text-3xl font-semibold">Notes</h1>
+              <h1 className="text-3xl font-semibold">Notes - by developer</h1>
             </div>
 
             <div className="pasteData grid grid-cols-1 md:grid-cols-2 gap-5 w-full max-w-4xl">
